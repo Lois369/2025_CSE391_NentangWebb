@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <!-- Tạo form,em chủ yếu sử dụng: form, fieldset, type,input, html thuần, k có css... -->
+  <body>
+    <form action="#" method="">
+      <fieldset>
+        <legend>Basic Info</legend>
+        Employee ID:
+        <input type="text" name="employeeID" value="9" readonly /><br /><br />
+        Last Name:
+        <input type="text" name="lastName" value="Dodsworth" /><br /><br />
+        First Name:
+        <input type="text" name="firstName" value="Anne" /><br /><br />
+        Gender:
+        <br />
+        <input type="radio" name="gender" value="Male" /> Male <br />
+        <input type="radio" name="gender" value="Female" checked /> Female
+        <br />
+        <input type="radio" name="gender" value="XXX" /> XXX <br />
+        <input type="radio" name="gender" value="ZZZ" /> ZZZ <br /><br />
+        Title:
+        <input
+          type="text"
+          name="title"
+          value="Sales Representative"
+        /><br /><br />
+        Suffix: <input type="text" name="suffix" value="Ms." /><br /><br />
+        Birth Date:
+        <input type="date" name="birthDate" value="1999-07-02" /><br /><br />
+        Hire Date:
+        <input type="date" name="hireDate" value="1994-11-15" /><br /><br />
+        SSN # (if applicable):
+        <input type="text" name="" id="" /> <br /><br />
+        Reports To:
+        <select name="reportsTo">
+          <option value="Buchanan" selected>Buchanan</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact Info</legend>
+        Email:
+        <input type="email" name="email" value="name@example.com" /><br /><br />
+        Address:
+        <input
+          type="text"
+          name="address"
+          value="7 Houndstooth Rd."
+        /><br /><br />
+        City: <input type="text" name="city" value="London" /><br /><br />
+        Region: <input type="text" name="" id="" /><br /><br />
+        Postal Code:
+        <input type="text" name="postalCode" value="WG2 2LT" /><br /><br />
+        Country:
+        <select name="country">
+          <option value="Russian Federation" selected>
+            Russian Federation
+          </option></select
+        ><br /><br />
+        US Home Phone:
+        <input type="text" name="homePhone" value="(234)234-2342" /><br /><br />
+        Photo: <input type="text" name="photo" value="EmpID9.bmp" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Optional Info</legend>
+        Notes:<br />
+        <textarea name="notes" rows="4" cols="50"></textarea><br /><br />
+
+        Preferred Shift:
+        <input type="radio" name="shift" value="Regular" checked /> Regular
+        <input type="radio" name="shift" value="Gravy Yard" /> Gravy Yard
+        <br /><br />
+
+        Active: <input type="checkbox" name="active" checked /><br /><br />
+
+        Are you human? <input type="text" name="captcha" value="" />
+      </fieldset>
+
+      <br />
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Cancel" />
+      <button>required</button>
+    </form>
+  </body>
+</html>
