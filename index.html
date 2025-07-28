@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <div class="topbar">
+      <div class="logo">TLU</div>
+      <div class="nav-links">
+        <span>Home</span>
+        <span>Employees</span>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Search" />
+        <button onclick="searchEmp()">Search</button>
+      </div>
+    </div>
+
+    <!-- Title Section -->
+    <div class="titlebar">
+      <h2>Manage <strong>Employees</strong></h2>
+      <div class="btn-group">
+        <button class="btn-red">🗑️ Delete</button>
+        <button class="btn-green" onclick="openForm()">
+          ➕ Add New Employee
+        </button>
+      </div>
+    </div>
+
+    <!-- Employee Table -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="empBody"></tbody>
+      </table>
+
+      <div class="footer">
+        <span id="countText">Showing 5 out of 25 entries</span>
+        <div class="pagination">
+          <span>Previous</span>
+          <span>1</span>
+          <span>2</span>
+          <span class="active">3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>Next</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Form -->
+    <div class="popup" id="popupForm">
+      <div class="popup-content">
+        <span class="close" onclick="closeForm()">×</span>
+        <h3>Add Employee</h3>
+        <hr />
+        <form id="addForm">
+          <input type="text" id="name" placeholder="Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="address" placeholder="Address" required></textarea>
+          <input
+            type="text"
+            id="phone"
+            placeholder="Phone (10 digits)"
+            required
+          />
+          <small id="phoneMsg" class="error"></small>
+          <div class="popup-btns">
+            <button type="button" onclick="closeForm()">Cancel</button>
+            <button type="submit" class="btn-green">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
