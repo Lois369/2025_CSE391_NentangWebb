@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý giao dịch của Lưu Văn Lợi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">Trường Đại Học Thủy Lợi</div>
+      <div class="search-bar">
+        <input type="text" placeholder="Nhập nội dung tìm kiếm" />
+        <button>TÌM KIẾM</button>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="toolbar">
+        <div class="left-buttons">
+          <button class="add-btn" id="addTransactionBtn">➕ THÊM</button>
+          <button class="export-btn">📄 XUẤT RA FILE</button>
+        </div>
+        <div class="search-transaction">
+          <input type="text" placeholder="Tìm kiếm giao dịch" />
+          <button>🔎</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="selectAll" /></th>
+              <th>Hành động</th>
+              <th>ID</th>
+              <th>Khách hàng</th>
+              <th>Nhân viên</th>
+              <th>Số tiền</th>
+              <th>Ngày mua</th>
+            </tr>
+          </thead>
+          <tbody id="transactionTableBody"></tbody>
+        </table>
+        <button class="delete-selected-btn">🔴 DELETE SELECTED RECORDS</button>
+
+        <div class="footer-table">
+          <div class="pagination" id="pagination"></div>
+          <div class="result-info">
+            Kết quả <span id="currentResult">1</span> trong
+            <span id="totalResults">20</span> trang
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p>TRƯỜNG ĐẠI HỌC THỦY LỢI</p>
+      <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+      <p>Điện thoại: (024) 38522201 - Fax: (024) 35633351</p>
+      <p>Email: phongcth@tlu.edu.vn</p>
+    </div>
+
+    <div id="addTransactionModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Thêm giao dịch</h2>
+        <form id="transactionForm">
+          <label for="customerName">Khách hàng</label>
+          <input type="text" id="customerName" name="customerName" />
+          <span class="error-message" id="customerNameError"></span>
+
+          <label for="employeeName">Nhân viên</label>
+          <input type="text" id="employeeName" name="employeeName" />
+          <span class="error-message" id="employeeNameError"></span>
+
+          <label for="amount">Số tiền</label>
+          <input type="number" id="amount" name="amount" />
+          <span class="error-message" id="amountError"></span>
+
+          <div class="modal-buttons">
+            <button type="button" class="cancel-btn" id="cancelBtn">Hủy</button>
+            <button type="submit" class="submit-btn">Thêm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
