@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý Đại học Thủy lợi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="header-top">
+      <div class="container header-content">
+        <div class="university-name">Trường Đại học Thủy lợi</div>
+        <div class="header-actions">
+          <a href="#" class="btn-header">Trang chủ</a>
+          <a href="#" class="btn-header">Quản lý cửa hàng</a>
+          <div class="search-input-group">
+            <input type="text" placeholder="Nhập nội dung tìm kiếm" />
+            <button class="btn-search-header">TÌM KIẾM</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container main-content">
+      <div class="controls-bar">
+        <div class="left-controls">
+          <button class="btn-primary" id="addNewEmployeeBtn">
+            <i class="fas fa-plus-circle"></i> THÊM MỚI
+          </button>
+          <button class="btn-secondary">
+            <i class="fas fa-file-export"></i> XUẤT RA FILE
+          </button>
+        </div>
+        <div class="center-search">
+          <div class="search-field-group">
+            <button class="btn-icon" id="prevPageBtn">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <input
+              type="text"
+              id="employeeSearchInput"
+              placeholder="Tìm kiếm theo Tên"
+            />
+            <button class="btn-icon" id="searchEmployeeBtn">
+              <i class="fas fa-search"></i>
+            </button>
+            <button class="btn-icon" id="nextPageBtn">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="right-results">
+          <span>Kết quả</span>
+          <select class="results-dropdown" id="rowsPerPageSelect">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="selectAllRows" /> Hành động</th>
+              <th>STT</th>
+              <th>Tên</th>
+              <th>Họ đệm</th>
+              <th>Địa chỉ</th>
+              <th>Hoạt động <i class="fas fa-chevron-down"></i></th>
+            </tr>
+          </thead>
+          <tbody id="employeeTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="pagination-info" id="paginationInfo"></div>
+    </div>
+
+    <div class="footer">
+      <div class="container footer-content">
+        <div class="footer-university-name">TRƯỜNG ĐẠI HỌC THỦY LỢI</div>
+        <div class="footer-contact-info">
+          <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+          <p>Điện thoại: (024) 35622301 - Fax: (024) 35633351</p>
+          <p>Email: phongcth@tlu.edu.vn</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="addEmployeeModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Add Employee</h2>
+          <span class="close-button" id="closeModalBtn">&times;</span>
+        </div>
+        <div class="modal-body">
+          <form id="addEmployeeForm">
+            <div class="form-group">
+              <label for="employeeName">Name</label>
+              <input type="text" id="employeeName" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="employeeEmail">Email</label>
+              <input type="email" id="employeeEmail" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="employeeAddress">Address</label>
+              <textarea
+                id="employeeAddress"
+                name="address"
+                rows="3"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="employeePhone">Phone</label>
+              <input type="tel" id="employeePhone" name="phone" required />
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-modal-cancel" id="cancelAddBtn">Cancel</button>
+          <button class="btn-modal-add" type="submit" form="addEmployeeForm">
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
